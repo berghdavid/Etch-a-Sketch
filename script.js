@@ -7,13 +7,13 @@ let sideSize = 16;
 const width = 960;
 
 const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
-const buttonHeight = vh/10 + 'px'; // 1/10 of vh left as margin
-const gridHeight = vh*8/10 + 'px';
+const buttonHeight = vh / 10 + 'px'; // 1/10 of vh left as margin
+const gridHeight = vh * 8 / 10 + 'px';
 
 const buttonHolder = document.getElementById("button-holder");
 buttonHolder.style.height = buttonHeight;
 buttonHolder.style.width = width + 'px';
-buttonHolder.style.margin = vh/50 + 'px' + " auto " + vh/50 + 'px' + " auto"; // Needs a better scalable system
+buttonHolder.style.margin = vh / 50 + 'px' + " auto " + vh / 50 + 'px' + " auto"; // Needs a better scalable system
 buttonHolder.style.backgroundColor = "#BBBFFF";
 buttonHolder.style.border = "1px solid #000000";    // Border and radius class could be added instead (buttons as well)
 buttonHolder.style.borderRadius = "1rem";
@@ -35,10 +35,10 @@ resetButton.style.margin = "30px";
 resetButton.style.border = "1px solid #000000";
 resetButton.style.borderRadius = "1rem";
 
-newButton.onclick = function() {  
+newButton.onclick = function () {
     var size = prompt("Enter grid size:");
-    if(size != null){
-        if(size > 100 || size < 1){
+    if (size != null) {
+        if (size > 100 || size < 1) {
             alert("Invalid grid size. Grid size must be between 1-100.");
         }
         else {
@@ -48,25 +48,25 @@ newButton.onclick = function() {
     }
 }
 
-resetButton.onclick = function() {  
+resetButton.onclick = function () {
     if (confirm('Are you sure you want to reset the grid?')) {
         resetGrid(); // Could be made without completely resetting
         initGrid(sideSize);
     }
 }
 
-function initGrid (size) { 
+function initGrid(size) {
     for (i = 0; i < size; i++) {
         for (let j = 0; j < size; j++) {
             const newDiv = document.createElement("div");
-            newDiv.style.width = (width/size) + 'px';
-            newDiv.style.height = (gridHeight/size) + 'px';
+            newDiv.style.width = (width / size) + 'px';
+            newDiv.style.height = (gridHeight / size) + 'px';
             newDiv.style.backgroundColor = "#AAAAAA";
             newDiv.style.boxSizing = "border-box";
             newDiv.style.border = "1px solid #000000";
             newDiv.className = "grid-item";
 
-            newDiv.onmouseover = function() {
+            newDiv.onmouseover = function () {
                 newDiv.style.backgroundColor = "black"
             };
 
@@ -76,7 +76,7 @@ function initGrid (size) {
     sideSize = size;
 }
 
-function resetGrid () {
+function resetGrid() {
     var allItems = document.querySelectorAll(".grid-item");
     allItems.forEach((gridItem) => {
         gridItem.remove();
