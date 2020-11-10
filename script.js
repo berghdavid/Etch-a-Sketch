@@ -8,12 +8,12 @@ const width = 960;
 
 const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
 const buttonHeight = vh / 10 + 'px'; // 1/10 of vh left as margin
-const gridHeight = vh * 8 / 10 + 'px';
+const gridHeight = vh * 7 / 10 + 'px';
 
 const buttonHolder = document.getElementById("button-holder");
 buttonHolder.style.height = buttonHeight;
 buttonHolder.style.width = width + 'px';
-buttonHolder.style.margin = vh / 50 + 'px' + " auto " + vh / 50 + 'px' + " auto"; // Needs a better scalable system
+buttonHolder.style.margin = vh / 50 + 'px' + " auto " + vh / 50 + 'px' + " auto"; // Needs a better resizable system
 buttonHolder.style.backgroundColor = "#BBBFFF";
 buttonHolder.style.border = "1px solid #000000";    // Border and radius class could be added instead (buttons as well)
 buttonHolder.style.borderRadius = "1rem";
